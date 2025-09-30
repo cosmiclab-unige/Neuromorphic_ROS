@@ -26,6 +26,7 @@ RUN rm -f /etc/ros/rosdep/sources.list.d/20-default.list && rosdep init && rosde
 
 # Create a ROS workspace
 RUN mkdir -p /root/**project_name_ros**/src
+RUN mkdir -p /tmp/ros_home/.ros*
 
 # Set working directory
 WORKDIR /root/**project_name_ros**
@@ -64,7 +65,7 @@ touch Dockerfile
 # Connect the host's serial device /dev/ttyUSB0
 # Image to create the container from
 sudo docker run -it \
--e DISPLAY=$DISPLAY \  # If you to forward to a other PC connected via ssh you have to put -e DISPLAY=IPADDRESS:0      
+-e DISPLAY=$DISPLAY \  # If you to forward to a other PC connected via ssh you have to put -e DISPLAY=IPV4ADDRESSPC:0      
 -v /tmp/.X11-unix:/tmp/.X11-unix \
 --device=/dev/ttyUSB0 \
 --network host \               

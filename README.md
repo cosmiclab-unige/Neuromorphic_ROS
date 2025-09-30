@@ -65,7 +65,8 @@ touch Dockerfile
 # Image to create the container from
 sudo docker run -it \
 -e DISPLAY=$DISPLAY \       
--v /tmp/.X11-unix:/tmp/.X11-unix \  
+-v /tmp/.X11-unix:/tmp/.X11-unix \
+--device=/dev/ttyUSB0 \
 --network host \               
 --name **container_name** \       
 **project_name_ros** bash      

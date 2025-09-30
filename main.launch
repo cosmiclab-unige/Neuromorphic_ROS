@@ -1,0 +1,12 @@
+<launch>
+  <!-- Nodo per il plotting -->
+  <node pkg="main_pkg" type="ReadData.py" name="read_data_node" output="screen">
+    <param name="filename" value="$(find main_pkg)/data/dataset.npy"/>
+    <param name="n_sensors" value="8"/>
+  </node>
+
+    <node pkg="main_pkg" type="PlotSpikes.py" name="plot_spikes_node" output="screen">
+        <param name="n_sensors" value="8"/>
+        <param name="buffer_size" value="1000"/>
+    </node>
+</launch>

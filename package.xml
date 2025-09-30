@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>main_pkg</name>
+  <version>0.0.1</version>
+  <description>Package for main ROS interface</description>
+
+  <maintainer email="christian.gianoglio@unige.it">Christian Gianoglio</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dipendenze per build (messaggi, servizi, ecc.) -->
+  <build_depend>message_generation</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>message_runtime</build_depend>
+
+  <!-- Dipendenze esportate per altri package -->
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+
+  <!-- Dipendenze a runtime -->
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+  <export>
+  </export>
+</package>

@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
  && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies with pip
-RUN pip install --no-cache-dir matplotlib pyserial numpy
+RUN pip install --no-cache-dir matplotlib pyserial numpy==1.21
 
 # Initialize rosdep
 RUN rm -f /etc/ros/rosdep/sources.list.d/20-default.list && rosdep init && rosdep update

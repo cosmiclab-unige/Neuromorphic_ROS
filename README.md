@@ -64,7 +64,7 @@ touch Dockerfile
 # Connect the host's serial device /dev/ttyUSB0
 # Image to create the container from
 sudo docker run -it \
--e DISPLAY=$DISPLAY \       
+-e DISPLAY=$DISPLAY \  # If you to forward to a other PC connected via ssh you have to put -e DISPLAY=IPADDRESS:0      
 -v /tmp/.X11-unix:/tmp/.X11-unix \
 --device=/dev/ttyUSB0 \
 --network host \               
